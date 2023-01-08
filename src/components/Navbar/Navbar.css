@@ -1,11 +1,13 @@
-a{
+a {
     text-decoration: none;
-    color:#333333
+    color: #333333
 }
-.navbar{
+
+.navbar {
     background-color: white;
 }
-.nav-btn{
-    border:1px solid black;
+
+.nav-btn {
+    border: 1px solid black;
     margin-top: -7;
 }

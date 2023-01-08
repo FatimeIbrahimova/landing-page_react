@@ -27,7 +27,7 @@ const Navbar = () => {
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             <NavLink to="/"><img src={navLogo} alt='img' /></NavLink>
                         </Typography>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, marginTop: -7 }}>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             <NavLink className={({ isActive }) => (isActive ? "nav-link" : "")} style={{ marginRight: 40 }} to="/about">About</NavLink>
                             <NavLink className={({ isActive }) => (isActive ? "nav-link" : "")} style={{ marginRight: 40 }} to="/portfolio">Portfolio</NavLink>
                             <NavLink className={({ isActive }) => (isActive ? "nav-link" : "")} style={{ marginRight: 40 }} to="/services">Services</NavLink>

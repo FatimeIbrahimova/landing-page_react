@@ -1,5 +1,5 @@
 import { Input } from '@mui/material'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import "./Home.css"
 import myLogo from './images/sec1.svg'
 import sec2Logo from "./images/sec2.svg"
@@ -18,19 +18,43 @@ import sec5Third from "./images/sec5third.svg"
 import sec5Fourth from "./images/sec5fourth.svg"
 import sec5Fifth from "./images/sec5fifth.svg"
 import sec5Second from "./images/sec5second.svg"
+import sec6Img1 from "./images/sec6img1.svg"
+import sec6Img2 from "./images/sec6img2.svg"
+import sec6Img3 from "./images/sec6img3.svg"
+import axios from 'axios'
+import { MainContext } from '../../context/ContextProvider'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 
 
 const Home = () => {
+    const { data, setData } = useContext(MainContext)
+    function handleChange(e) {
+        setData({
+            ...data, [e.target.name]: e.target.value
+        });
+    }
+    function handleClick(e) {
+
+        e.preventDefault();
+        let URL = 'http://localhost:3001/data';
+        axios.post(URL, data);
+    }
     return (
         <>
+            <HelmetProvider>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Home Page</title>
+                </Helmet>
+            </HelmetProvider>
             <div className='hero-section'>
                 <div className='hero-section_leftside'>
                     <h1 style={{ color: "#1D4645", fontSize: 60 }}>Play Online Quiz &
                         Win Cash Daily!</h1>
                     <p style={{ marginTop: -20, marginLeft: 30 }}>Win up to 1000৳ monthly from QuizBaj.</p>
                     <div style={{ display: "flex", marginTop: 30 }}>
-                        <Input style={{ marginLeft: 30 }} size="md" placeholder="Medium" />
+                        <Input style={{ marginLeft: 30 }} size="md" placeholder="enter phone number" />
                         <button className='hero-section_btn' style={{ marginLeft: 30 }}>Register Now</button>
                     </div>
                     <p style={{ marginTop: 30, fontsize: 35, fontWeight: 600, marginLeft: 30 }}>NUMBER OF ACTIVE USERS RIGHT NOW</p>
@@ -148,6 +172,44 @@ const Home = () => {
                         <img src={sec5Fifth} alt="logo" style={{ paddingTop: 20 }} />
                         <h1 style={{ paddingLeft: 20 }}>General Knowledge</h1>
                         <p style={{ paddingLeft: 10, paddingBottom: 20 }}>Text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                    </div>
+                </div>
+            </div>
+            <div className='sixth-section'>
+                <h1 style={{ color: "white", marginLeft: 50, width: 200, paddingTop: 20 }}>Check Latest Articles</h1>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div style={{ marginLeft: 50 }}>
+                        <img src={sec6Img1} alt="img1" />
+                        <h1 style={{ color: "white", fontSize: 20, width: 300 }}>Even the all-powerful Pointing has no control about</h1>
+                        <span style={{ color: "white", marginBottom: 20 }}>16 Oct 2020</span>
+                    </div>
+                    <div style={{ marginLeft: 50 }}>
+                        <img src={sec6Img2} alt="img1" />
+                        <h1 style={{ color: "white", fontSize: 20, width: 300 }}>Almost unorthographic life One day however a small line</h1>
+                        <span style={{ color: "white" }}>14 Oct 2020</span>
+                    </div>
+                    <div style={{ marginLeft: 50, marginRight: 50 }}>
+                        <img src={sec6Img3} alt="img1" />
+                        <h1 style={{ color: "white", fontSize: 20, width: 300 }}>Lorem Ipsum decided to leave for the far World of Grammar</h1>
+                        <span style={{ color: "white" }}>10 Oct 2020</span>
+                    </div>
+                </div>
+            </div>
+            <div className='seventh-section'>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: 100 }}>
+                    <span style={{ color: "#1D4645" }}>Contact Us</span>
+                    <h1 style={{ color: "#1D4645" }}>Get In Touch</h1>
+                    <p style={{ color: "#5F5F5F" }}>Lorem Ipsum decided to leave for the far World of Grammar</p>
+                    <div style={{ backgroundColor: "white" }}>
+                        <form>
+                            <label id="name">Name</label><br />
+                            <input onChange={(e) => handleChange(e)} name="name" id="name" /><br />
+                            <label id="surname">Surname</label><br />
+                            <input onChange={(e) => handleChange(e)} name="surname" id="surname" /><br />
+                            <label id="message">Message</label><br />
+                            <textarea onChange={(e) => handleChange(e)} name="message"></textarea><br />
+                            <button onClick={(e) => handleClick(e)} style={{ backgroundColor: "#1D4645", color: "white", width: 100, height: 30, border: "none", borderRadius: 5, marginBottom: 10 }}>Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
