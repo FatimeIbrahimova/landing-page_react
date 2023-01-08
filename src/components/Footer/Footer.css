@@ -1,0 +1,36 @@
+.footer-top{
+    display: flex;
+    justify-content: space-around;
+}
+li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+h2{
+    color:#E8C5B0;
+}
+.list li{
+    color:white;
+}
+.footer{
+    background-color: #1D4645;
+}
+.footer-icon li{
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: #E8C5B0;
+    border:none;
+    margin-left:5px;
+}
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    width:90%;
+    color:white;
+}
+.line{
+    width: 92%;
+    color:#245856;
+}

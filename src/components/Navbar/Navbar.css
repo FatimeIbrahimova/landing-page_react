@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+    color:#333333
+}
+.navbar{
+    background-color: white;
+}
+.nav-btn{
+    border:1px solid black;
+    margin-top: -7;
+}

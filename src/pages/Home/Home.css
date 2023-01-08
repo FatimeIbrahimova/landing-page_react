@@ -1,0 +1,48 @@
+.hero-section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.hero-section_leftside{
+    /* margin-top: 50px; */
+    margin-left: 50px;
+    width: 340px;
+}
+.hero-section_btn{
+    background-color: #E8C5B0;
+    color:#1D4645;
+    height:30px;
+    width: 120px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+.second-section{
+    background-color: #1D4645;
+    margin-top: 70px;
+}
+.third-section{
+    margin-top: 50px;
+}
+.fourth-section_top{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+.fourth-section{
+    margin-top: 70px;
+}
+.fourth-section_cards2 h1{
+    padding-left: 50px;
+}
+.fourth-section_cards1 h1{
+    padding-left: 50px;
+}
+.fifth-section_top{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+.fifth-section{
+    margin-top: 70px;
+}
